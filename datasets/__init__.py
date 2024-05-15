@@ -46,7 +46,7 @@ def get_dataset(args, config):
             [transforms.Resize(config.data.image_size), transforms.ToTensor()]
         )
 
-    folder_path = '/data2/common/weixinchen'
+    folder_path = './data2'
 
     if config.data.dataset == "CIFAR10":
         dataset = CIFAR10(
@@ -236,7 +236,7 @@ def get_targetset(dataset_name, args, config):
             [transforms.Resize(config.data.image_size), transforms.ToTensor()]
         )
 
-    folder_path = '/data2/common/weixinchen'
+    folder_path = './data2'
 
     if dataset_name == "CIFAR10":
         dataset = CIFAR10(
@@ -254,22 +254,22 @@ def get_targetset(dataset_name, args, config):
 
     elif dataset_name == "MNIST":
         # # target distribution
-        # dataset = MNIST(
-        #     os.path.join(folder_path, "datasets", "mnist"),
-        #     train=True,
-        #     download=True,
-        #     transform=tran_transform,
-        # )
-        # test_dataset = MNIST(
-        #     os.path.join(folder_path, "datasets", "mnist_test"),
-        #     train=False,
-        #     download=True,
-        #     transform=test_transform,
-        # )
+        dataset = MNIST(
+            os.path.join(folder_path, "datasets", "mnist"),
+            train=True,
+            download=True,
+            transform=tran_transform,
+        )
+        test_dataset = MNIST(
+            os.path.join(folder_path, "datasets", "mnist_test"),
+            train=False,
+            download=True,
+            transform=test_transform,
+        )
 
         # target class
-        data_path = os.path.join(folder_path, 'mnist', 'train', str(args.target_label))
-        test_data_path = os.path.join(folder_path, 'mnist', 'test', str(args.target_label))
+        data_path = os.path.join(folder_path, 'datasets', 'mnist_train', str(args.target_label))
+        test_data_path = os.path.join(folder_path, 'datasets', 'mnist_test', str(args.target_label))
 
         # # target distribution
         # data_path = '/data2/common/weixinchen/mnist_60000'

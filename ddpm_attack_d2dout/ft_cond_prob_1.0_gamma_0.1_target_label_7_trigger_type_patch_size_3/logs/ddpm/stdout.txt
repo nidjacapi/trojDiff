@@ -1,0 +1,17 @@
+INFO - main_attack_d2dout.py - 2024-05-15 13:31:25,296 - Using device: cpu
+INFO - main_attack_d2dout.py - 2024-05-15 13:31:25,298 - Writing log file to ./ddpm_attack_d2dout/ft_cond_prob_1.0_gamma_0.1_target_label_7_trigger_type_patch_size_3/logs/ddpm
+INFO - main_attack_d2dout.py - 2024-05-15 13:31:25,298 - Exp instance id = 45680
+INFO - main_attack_d2dout.py - 2024-05-15 13:31:25,298 - Exp comment = 
+ERROR - main_attack_d2dout.py - 2024-05-15 13:31:29,005 - Traceback (most recent call last):
+  File "/Users/nikolacapan/Desktop/Faks/Seminar2/TrojDiff/main_attack_d2dout.py", line 252, in main
+    runner.train()
+  File "/Users/nikolacapan/Desktop/Faks/Seminar2/TrojDiff/runners/diffusion_attack_d2dout.py", line 161, in train
+    target_loader = data.DataLoader(
+                    ^^^^^^^^^^^^^^^^
+  File "/Users/nikolacapan/Desktop/Faks/Seminar2/TrojDiff/venv/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 350, in __init__
+    sampler = RandomSampler(dataset, generator=generator)  # type: ignore[arg-type]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/nikolacapan/Desktop/Faks/Seminar2/TrojDiff/venv/lib/python3.11/site-packages/torch/utils/data/sampler.py", line 143, in __init__
+    raise ValueError(f"num_samples should be a positive integer value, but got num_samples={self.num_samples}")
+ValueError: num_samples should be a positive integer value, but got num_samples=0
+

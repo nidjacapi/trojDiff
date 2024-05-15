@@ -94,14 +94,14 @@ def parse_args_and_config():
     parser.add_argument('--cond_prob', type=float, default=1.0)
     parser.add_argument('--gamma', type=float, default=None)
     parser.add_argument('--target_label', type=int, default=7)
-    parser.add_argument('--miu_path', type=str, default='/home/username/ddim/images/hello_kitty.png')
+    parser.add_argument('--miu_path', type=str, default='./images/hello_kitty.png')
     parser.add_argument('--total_n_samples', type=int, default=50000)
     parser.add_argument('--trigger_type', type=str, default='blend')
     parser.add_argument('--patch_size', type=int, default=3)
 
     args = parser.parse_args()
 
-    args.exp = os.path.join('/data/username/ddpm_attack_d2dout',
+    args.exp = os.path.join('./ddpm_attack_d2dout',
                             'ft_cond_prob_' + str(args.cond_prob) + '_gamma_' + str(
                                 args.gamma) + '_target_label_' + str(args.target_label) + '_trigger_type_' + str(
                                 args.trigger_type))  # attack

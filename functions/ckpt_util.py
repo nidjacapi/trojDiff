@@ -58,7 +58,7 @@ def get_ckpt_path(name, root=None, check=False):
     assert name in URL_MAP
     # Modify the path when necessary
     # cachedir = os.environ.get("XDG_CACHE_HOME", os.path.expanduser("/atlas/u/tsong/.cache"))
-    cachedir = '/home/username/ddim/saved'
+    cachedir = '.ddim/saved'
     root = (
         root
         if root is not None
